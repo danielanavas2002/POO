@@ -33,12 +33,6 @@ class Main
         System.out.println(greys.Watched());
         System.out.println("******");
 
-        Serie thisisus = new Serie("This Is Us", 106, 8.7f, "Amazon Prime Video", "Plan to Watch", 0);
-        System.out.println(thisisus.getInformation());
-        System.out.println(thisisus.getName() + "'s Status: " + thisisus.getStatus());
-        System.out.println(thisisus.Watched());
-        System.out.println("******");
-
 // ** MOVIES ** --------------------------------------------------------------------------------------        
        // public Movie(String name, float imdb, String platform, boolean watched, int viewerAge, String classification) 
         System.out.println("---------------------------------------------------------------------------------------");
@@ -46,16 +40,6 @@ class Main
         Movie draftday = new Movie("Draft Day", 6.8f, "Apple Tv", false, 10, "PG" );
         System.out.println(draftday.getInformationMovie());
         System.out.println(draftday.Ageclassification());
-        System.out.println("******");
-
-        Movie blackorWhite = new Movie("Black or White", 6.6f, "VIX", true, 21, "PG" );
-        System.out.println(blackorWhite.getInformationMovie());
-        System.out.println(blackorWhite.Ageclassification());
-        System.out.println("******");
-
-        Movie theProposal = new Movie("The Proposal", 6.8f, "Disney+", false, 30, "PG" );
-        System.out.println(theProposal.getInformationMovie());
-        System.out.println(theProposal.Ageclassification());
         System.out.println("******");
 
         Movie zootopia = new Movie("Zootopia", 8.0f, "Disney+", true, 5, "G" );
