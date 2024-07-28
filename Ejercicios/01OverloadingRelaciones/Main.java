@@ -1,3 +1,17 @@
+/**
+ * Universidad del Valle de Guatemala
+ * CC2008 - Programación Orientada a Objetos
+ * Sección 50
+ * Fecha de Creacion: 27 de Julio de 2024
+ * Ultima Modificacion: 28 de Julio de 2024
+ * @author Daniela_Navas
+ * 
+ * Descripcion: Programa que permite la compra de boletos para un concierto con disponibilidad limitada. 
+ * Se revisan condiciones de presupuesto y disponibilidad, para generar la venta. Además de generar un número 
+ * único para cada ticket. Se permite revisara la disponibilidad total e individual de las localidades, así
+ * como un reporte de caja que indica el total vendido.
+ */
+
 import java.util.Scanner;
 import java.util.Date;
 
@@ -96,21 +110,21 @@ public class Main{
                                     System.out.println("******************************");
 
 
-                                } else if(localidad1.getCapacidad() == 0){ // Validar Espacio
+                                } else if(localidad1.Disponibilidad() == 0){ // Validar Espacio
                                     System.out.println("******************************");
                                     System.out.println("*      BOLETOS AGOTADOS      *");
                                     System.out.println("******************************");
                                 }
                                 
-                                else if(localidad1.getCapacidad() - cantidad < 0){ // Validar Disponibilidad
+                                else if(localidad1.Disponibilidad() - cantidad < 0){ // Validar Disponibilidad
                                     System.out.println("*****************************");
                                     System.out.println("*  SE EXCEDE DISPONIBLIDAD  *");
                                     System.out.println("*****************************");
                                     System.out.println("Se tienen Disponibles " + localidad1.getCapacidad() + " Boletos");
-                                    cantidad = localidad1.getCapacidad();
-                                    localidad1.setCapacidad(localidad1.getCapacidad() - cantidad);
+                                    cantidad = localidad1.Disponibilidad();
                                     localidad1.setVendidos(localidad1.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad1);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -126,9 +140,9 @@ public class Main{
                                     System.out.println("*****************************");
                                     System.out.println("*      COMPRA EXISTOSA      *");
                                     System.out.println("*****************************");
-                                    localidad1.setCapacidad(localidad1.getCapacidad() - cantidad);
                                     localidad1.setVendidos(localidad1.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad1);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -153,21 +167,21 @@ public class Main{
                                     System.out.println("******************************");
 
 
-                                } else if(localidad5.getCapacidad() == 0){ // Validar Espacio
+                                } else if(localidad5.Disponibilidad() == 0){ // Validar Espacio
                                     System.out.println("******************************");
                                     System.out.println("*      BOLETOS AGOTADOS      *");
                                     System.out.println("******************************");
                                 }
                                 
-                                else if(localidad5.getCapacidad() - cantidad < 0){ // Validar Disponibilidad
+                                else if(localidad5.Disponibilidad() - cantidad < 0){ // Validar Disponibilidad
                                     System.out.println("*****************************");
                                     System.out.println("*  SE EXCEDE DISPONIBLIDAD  *");
                                     System.out.println("*****************************");
                                     System.out.println("Se tienen Disponibles " + localidad5.getCapacidad() + " Boletos");
-                                    cantidad = localidad5.getCapacidad();
-                                    localidad5.setCapacidad(localidad5.getCapacidad() - cantidad);
+                                    cantidad = localidad5.Disponibilidad();
                                     localidad5.setVendidos(localidad5.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad5);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -183,9 +197,9 @@ public class Main{
                                     System.out.println("*****************************");
                                     System.out.println("*      COMPRA EXISTOSA      *");
                                     System.out.println("*****************************");
-                                    localidad5.setCapacidad(localidad5.getCapacidad() - cantidad);
                                     localidad5.setVendidos(localidad5.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad5);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -211,21 +225,21 @@ public class Main{
                                     System.out.println("******************************");
 
 
-                                } else if(localidad10.getCapacidad() == 0){ // Validar Espacio
+                                } else if(localidad10.Disponibilidad() == 0){ // Validar Espacio
                                     System.out.println("******************************");
                                     System.out.println("*      BOLETOS AGOTADOS      *");
                                     System.out.println("******************************");
                                 }
                                 
-                                else if(localidad10.getCapacidad() - cantidad < 0){ // Validar Disponibilidad
+                                else if(localidad10.Disponibilidad() - cantidad < 0){ // Validar Disponibilidad
                                     System.out.println("*****************************");
                                     System.out.println("*  SE EXCEDE DISPONIBLIDAD  *");
                                     System.out.println("*****************************");
                                     System.out.println("Se tienen Disponibles " + localidad10.getCapacidad() + " Boletos");
-                                    cantidad = localidad10.getCapacidad();
-                                    localidad10.setCapacidad(localidad10.getCapacidad() - cantidad);
+                                    cantidad = localidad10.Disponibilidad();
                                     localidad10.setVendidos(localidad10.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad10);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -241,9 +255,9 @@ public class Main{
                                     System.out.println("*****************************");
                                     System.out.println("*      COMPRA EXISTOSA      *");
                                     System.out.println("*****************************");
-                                    localidad10.setCapacidad(localidad10.getCapacidad() - cantidad);
                                     localidad10.setVendidos(localidad10.getVendidos() + cantidad);
                                     cliente.setCantidad(cantidad);
+                                    cliente.setLocalidad(localidad10);
                                     System.out.println("Cliente: " + cliente.getNombre());
                                     System.out.println("Email: " + cliente.getEmail());
                                     System.out.println("Cantidad: " + cliente.getCantidad());
@@ -272,9 +286,9 @@ public class Main{
                     System.out.println("*    DISPONIBILIDAD TOTAL    *");
                     System.out.println("******************************");
                     System.out.println("DISPONIBLES:");
-                    System.out.println("Localidad 1: " + localidad1.getCapacidad() + " boletos.");
-                    System.out.println("Localidad 5: " + localidad5.getCapacidad() + " boletos.");
-                    System.out.println("Localidad 10: " + localidad10.getCapacidad() + " boletos.");
+                    System.out.println("Localidad 1: " + localidad1.Disponibilidad() + " boletos.");
+                    System.out.println("Localidad 5: " + localidad5.Disponibilidad() + " boletos.");
+                    System.out.println("Localidad 10: " + localidad10.Disponibilidad() + " boletos.");
                     System.out.println("-------------------------------");
                     System.out.println("VENDIDOS:");
                     System.out.println("Localidad 1: " + localidad1.getVendidos() + " boletos.");
@@ -297,7 +311,7 @@ public class Main{
                         case 1:
                             System.out.println("-------------------------------");
                             System.out.println("DISPONIBLES:");
-                            System.out.println("Localidad 1: " + localidad1.getCapacidad() + " boletos.");
+                            System.out.println("Localidad 1: " + localidad1.Disponibilidad() + " boletos.");
                             System.out.println("-------------------------------");
                             System.out.println("VENDIDOS:");
                             System.out.println("Localidad 1: " + localidad1.getVendidos() + " boletos.");
@@ -306,7 +320,7 @@ public class Main{
                         case 2:
                             System.out.println("-------------------------------");
                             System.out.println("DISPONIBLES:");
-                            System.out.println("Localidad 5: " + localidad5.getCapacidad() + " boletos.");
+                            System.out.println("Localidad 5: " + localidad5.Disponibilidad() + " boletos.");
                             System.out.println("-------------------------------");
                             System.out.println("VENDIDOS:");
                             System.out.println("Localidad 5: " + localidad5.getVendidos() + " boletos.");
@@ -315,7 +329,7 @@ public class Main{
                         case 3:
                             System.out.println("-------------------------------");
                             System.out.println("DISPONIBLES:");
-                            System.out.println("Localidad 10: " + localidad10.getCapacidad() + " boletos.");
+                            System.out.println("Localidad 10: " + localidad10.Disponibilidad() + " boletos.");
                             System.out.println("-------------------------------");
                             System.out.println("VENDIDOS:");
                             System.out.println("Localidad 10: " + localidad10.getVendidos() + " boletos.");

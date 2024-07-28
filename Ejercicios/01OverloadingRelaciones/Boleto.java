@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * CC2008 - Programación Orientada a Objetos
+ * Sección 50
+ * Fecha de Creacion: 27 de Julio de 2024
+ * Ultima Modificacion: 28 de Julio de 2024
+ * @author Daniela_Navas
+ * 
+ * Descripcion: Clase que permite generar y manipular diferentes boletos para
+ * el concierto
+ */
+
 public class Boleto {
     // Atributos
     private String numero;
@@ -37,12 +49,17 @@ public class Boleto {
         return this.localidad;
     }
 
-    // Constructor
-    public Boleto(String numero, float precio, Localidad localidad){
+    public Boleto(String numero, float precio, Localidad localidad)
+    {
+        /* 
+         * Constructor
+         * @param numero      Numero generado de boleto con fecha y numero (AAAAmmdd#)
+         * @param precio      Precio total del boleto
+         * @param localidad   Localidad a la que pertenece el boleto
+         */
         this.numero = numero;
         this.precio = precio;
         this.localidad = localidad;
-
     }
     
 }
