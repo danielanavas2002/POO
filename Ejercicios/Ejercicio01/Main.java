@@ -10,11 +10,23 @@ public class Main{
         Localidad localidad10 = new Localidad("Localidad 10", 200 , 0 , 1000.0f);
 
         // Fecha Actual
-        Date fechaActual = new Date();
+        Date fechaActual = new Date(); // Objeto de Fecha
         String diaActual, mesActual, anioActual;
 
-        diaActual = String.valueOf(fechaActual.getDate());
-        mesActual = String.valueOf(fechaActual.getMonth() + 1);
+        int diaActualint = fechaActual.getDate(); // Ajustar el valor si es entre 1 y 9, para agregar un cero antes y tener formato dd
+        if (diaActualint < 10){
+            diaActual = 0 + String.valueOf(fechaActual.getDate());
+        } else {
+            diaActual = String.valueOf(fechaActual.getDate());
+        }
+
+        int mesActualint = fechaActual.getMonth() + 1; // Ajustar el valor si es entre 1 y 9, para agregar un cero antes y tener formato mm
+        if (mesActualint < 10){
+            mesActual = 0 + String.valueOf(fechaActual.getMonth() + 1);
+        } else {
+            mesActual = String.valueOf(fechaActual.getMonth() + 1);
+        }
+
         anioActual = String.valueOf(fechaActual.getYear() + 1900);
         
         // Iniciar escaner
@@ -337,8 +349,7 @@ public class Main{
             }
         }
 
-        System.out.println("GRACIAS POR USAR EL PROGRAMA");
-        sc.close();
-
+        System.out.println("GRACIAS POR USAR EL PROGRAMA"); // Terminar ejecución del Programa
+        sc.close(); // Cerrar Escaner
     }
 }

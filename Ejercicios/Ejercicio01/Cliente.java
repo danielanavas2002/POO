@@ -4,6 +4,7 @@ public class Cliente {
     private String email;
     private int cantidad;
     private float presupuesto;
+    private Boleto boleto;
 
     // Setters
     public void setNombre(String nombre)
@@ -26,6 +27,10 @@ public class Cliente {
         this.presupuesto = presupuesto;
     }
 
+    public void setBoleto(Boleto boleto){
+        this.boleto = boleto;
+    }
+
     // Getters
     public String getNombre()
     {
@@ -45,6 +50,11 @@ public class Cliente {
     public float getPresupuesto()
     {
         return this.presupuesto;
+    }
+
+    public Boleto getBoleto()
+    {
+        return this.boleto;
     }
 
     // Constructor

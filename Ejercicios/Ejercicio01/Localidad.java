@@ -55,23 +55,4 @@ public class Localidad {
         this.vendidos = vendidos;
         this.precio = precio;
     }
-
-    // Adicionales
-    public int disponibilidad() {
-        return this.capacidad - this.vendidos;
-    } 
-
-    public int venderboletos(int cantidad) {
-        int disp;
-        disp = this.capacidad - this.vendidos;
-
-        if(disp <= 0){
-            System.out.println("Boletos Agotados");
-        } 
-        if (disp > 0){
-            System.out.println("Boleto Vendido");
-        }
-        return this.capacidad - this.vendidos;
-    } 
-    
 }
