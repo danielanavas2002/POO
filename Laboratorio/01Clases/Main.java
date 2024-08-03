@@ -91,7 +91,7 @@ class Main {
                         actual.setPuntos(actual.getPuntos() + puntosRonda);
                         seguirJugando = false; // Termina el turno del jugador actual
                     } else {
-                        System.out.print("* ¿Quieres seguir lanzando los dados? (1: Sí, 2: No): ");
+                        System.out.print("* ¿Quieres seguir lanzando los dados? (1: Si, 2: No): ");
                         int decision = sc.nextInt();
                         if (decision == 2) {
                             actual.setPuntos(actual.getPuntos() + puntosRonda);
