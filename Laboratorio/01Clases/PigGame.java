@@ -32,12 +32,12 @@ class PigGame {
     /**
      * Método que verifica si un jugador ha perdido sus puntos de la ronda.
      *
-     * @param valor1 valor del primer dado
-     * @param valor2 valor del segundo dado
+     * @param num1 valor del primer dado
+     * @param num2 valor del segundo dado
      * @return true si ninguno de los dados muestra 1, false de lo contrario
      */
-    public boolean ganar(int valor1, int valor2){
-        if(valor1 == 1 || valor2 == 1){
+    public boolean ganar(int num1, int num2){
+        if(num1 == 1 || num2 == 1){
             return false;
         } else {
             return true;
