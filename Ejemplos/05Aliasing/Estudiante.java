@@ -6,7 +6,18 @@ public class Estudiante {
         this.nombre = nombre;
         this.carrera = carrera;
         this.carnet = carnet;
+    }
 
+    public int getCarnet() {
+        return carnet;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     
