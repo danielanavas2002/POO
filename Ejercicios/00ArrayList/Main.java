@@ -1,9 +1,35 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+/**
+ * UNIVERSIDAD DEL VALLE DE GUATEMALA
+ * SEGUNDO SEMESTRE 2024
+ * PROGRAMACIÓN ORIENTADA A OBJETOS
+ * 
+ * Main Class 
+ * Gestiona la interacción con el usuario a través de un menú de opciones para procesar
+ * los resultados de la delegación de un país en las Olimpiadas de París 2024. Permite al usuario 
+ * obtener información sobre deportistas, medallas y comparar resultados con olimpiadas anteriores.
+ *
+ * @author Daniela Navas
+ * Fecha de creación: 26/08/2024
+ * Última modificación: 16/08/2024
+ */
+
+ import java.util.ArrayList;
+ import java.util.Scanner;
 
 class Main {
+    /**
+     * Método principal que ejecuta la aplicación.
+     * 
+     * Se presenta un menú al usuario y permite realizar consultas sobre la delegación 
+     * de un país en las Olimpiadas de París 2024. Las opciones incluyen obtener el total de 
+     * deportistas, el total de medallas de un equipo, el total de medallas obtenidas, el equipo 
+     * colectivo con más medallas de oro, y comparar los resultados con el promedio de las últimas 5 
+     * olimpiadas.</p>
+     * 
+     * @param args Argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Abrir escaner
 
         // Crear los equipos
         ArrayList<Equipo> equipos = new ArrayList<>();
@@ -39,6 +65,7 @@ class Main {
         System.out.println("****************************************************************************");
 
         while (menu) {
+            // Presentar menú principal
             System.out.println(" ");
             System.out.println("****************************************************************************");
             System.out.println("****                                MENU                                ****");
@@ -51,22 +78,22 @@ class Main {
             System.out.println("****************************************************************************");
             System.out.print("Seleccione una opción: ");
 
-            try {
+            try { // Probar entrada de texto valido para el menú
                 int opcion = Integer.parseInt(sc.nextLine()); // Escanear número y convertir a entero para facilitar uso de menú
 
                 switch (opcion) {
-                    case 1:
+                    case 1: // Cantidad total de deportistas
                         System.out.println("Delegación PARIS 2024 - Guatemala");
                         System.out.println("Total de deportistas: " + paris2024.totalDeportistas());
                         break;
 
-                    case 2:
+                    case 2: // Total de medallas obtenidas por un equipo   
                         System.out.println("Lista de equipo:");
                         for (int i = 0; i < equipos.size(); i++) {
                             System.out.println((i + 1) + ". " + equipos.get(i).getEquipo());
                         }
 
-                        try {
+                        try { // Probar una entrada valida para seleccion de que equipo 
                             System.out.print("Seleccione un Equipo (Número): ");
                             int equipoSeleccionado = Integer.parseInt(sc.nextLine()) - 1;
                             if (equipoSeleccionado >= 0 && equipoSeleccionado < equipos.size()) {
@@ -75,18 +102,18 @@ class Main {
                             } else {
                                 System.out.println("Equipo no válido. Intente de nuevo.");
                             }
-                        } catch (NumberFormatException e) {
+                        } catch (NumberFormatException e) { // Si no mostrar mensaje de que no es una entrada valida
                             System.out.println("Entrada no válida. Intente de nuevo.");
                         }
                         break;
 
-                    case 3:
+                    case 3: // Total de medallas obtenidas en la Olimpiada
                         System.out.println("Delegación PARIS 2024 - Guatemala");
                         System.out.println("Total de Medallas Obtenidas: " + paris2024.totalMedallas());
                         System.out.println("Total de Medallas Obtenidas: " + paris2024.totalMedallas());
                         break;
 
-                    case 4:
+                    case 4: // Equipo colectivo con más medallas de oro        
                         Equipo mejorEquipo = paris2024.oroColectivo();
                         if (mejorEquipo != null) {
                             System.out.println("El equipo colectivo con más medallas de oro es: " + mejorEquipo.getEquipo());
@@ -96,26 +123,26 @@ class Main {
                         }
                         break;
 
-                    case 5:
+                    case 5: // Comparar medallas obtenidas con el promedio de últimas 5 olimpiadas
                         boolean esMejor = paris2024.promedio();
                         System.out.println((esMejor ? "Se obtuvieron más medallas que el promedio de las últimas 5 olimpiadas" : "No se obtuvieron más medallas que el promedio de las últimas 5 olimpiadas"));
                         System.out.println("Promedio Últimas 5 Olimpiadas: " + paris2024.getPromedio());
                         System.out.println("Medallas Obtenidas en PARIS 2024: " + paris2024.totalMedallas());
                         break;
 
-                    case 6:
-                        menu = false;
+                    case 6: // Salir
+                        menu = false; // Cambiar estado de la bandera para menú
                         System.out.println("GRACIAS POR USAR EL PROGRAMA :)");
                         break;
 
-                    default:
+                    default: // Si los números no estan dentro de las opciones
                         System.out.println("Opción no válida. Por favor, seleccione una opción del 1 al 6.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) { // Si no es entrada, mostrar mensaje de salida
                 System.out.println("Entrada no válida. Por favor, ingrese un número.");
             }
         }
 
-        sc.close();
+        sc.close(); // Cerrar escaner
     }
 }
