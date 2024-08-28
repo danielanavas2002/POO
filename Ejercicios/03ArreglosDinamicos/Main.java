@@ -12,15 +12,22 @@ public class Main
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/mm/yyyy");
+        System.out.println("*********************************************************************************");
+        System.out.println("***                          GESTIÓN DE CONSTRUCTORA                          ***");
+        System.out.println("*********************************************************************************");
+        
 
         while (!salir) {
-            System.out.println("1. Nuevo Proyecto (Manual)");
-            System.out.println("2. Nuevo Proyecto (CSV) - Ideación");
-            System.out.println("3. Agregar nuevas ubicaciones de proyectos");
-            System.out.println("4. Gasto total en cada proyecto");
-            System.out.println("5. Contratistas más frecuentes");
-            System.out.println("6. Presupuesto total utilizado en un periodo determinado");
-            System.out.println("7. Salir");
+            System.out.println("*********************************************************************************");
+            System.out.println("***                              MENÚ PRINCIPAL                               ***");
+            System.out.println("** 1. Nuevo Proyecto (Manual)                                                  **");
+            System.out.println("** 2. Nuevo Proyecto (CSV) - Ideación                                          **");
+            System.out.println("** 3. Agregar nuevas ubicaciones de proyectos                                  **");
+            System.out.println("** 4. Gasto total en cada proyecto                                             **");
+            System.out.println("** 5. Contratistas más frecuentes                                              **");
+            System.out.println("** 6. Presupuesto total utilizado en un periodo determinado                    **");
+            System.out.println("** 7. Salir                                                                    **");
+            System.out.println("*********************************************************************************");
             System.out.print("Seleccione una opción: ");
 
             int opcion = sc.nextInt();
@@ -48,7 +55,7 @@ public class Main
                         boolean agregarMasContratistas = true;
 
                         while (agregarMasContratistas) {
-                            System.out.println("¿Desea agregar un contratista? (Si/No): ");
+                            System.out.print("¿Desea agregar un contratista? (Si/No): ");
                             String respuesta = sc.nextLine();
                             if (respuesta.equals("Si")) {
                                 System.out.print("Ingrese el ID del contratista: ");
@@ -86,6 +93,9 @@ public class Main
                     constructora.agregarUbicacion(ubicacion);
                     break;
                 case 4:
+                    System.out.println("--------------------------------");
+                    System.out.println("* GASTO TOTAL EN CADA PROYECTO *");        
+                    System.out.println("--------------------------------");
                     ArrayList<Proyecto> proyectos = constructora.getProyectos();
                     for (Proyecto proyecto : proyectos) {
                         double gastoTotal = 0.0;
@@ -101,10 +111,13 @@ public class Main
                         System.out.println("Fecha Fin Estimada: " + proyecto.getFechaFinEstimada());
                         System.out.println("Presupuesto: " + proyecto.getPresupuesto());
                         System.out.println("Gasto Total: " + gastoTotal);
-                        System.out.println("-----------------------------");
+                        System.out.println("--------------------------------");
                     }
                     break;
                 case 5:
+                    System.out.println("-------------------------------");
+                    System.out.println("* CONTRATISTAS MÁS FRECUENTES *");        
+                    System.out.println("-------------------------------");
                     ArrayList<String> contratistasIds = new ArrayList<>();
                     ArrayList<Double> contratistasGastos = new ArrayList<>();
                     ArrayList<Integer> contratistasFrecuencia = new ArrayList<>();
@@ -138,7 +151,7 @@ public class Main
                             System.out.println("ID Contratista: " + contratistasIds.get(maxIndex));
                             System.out.println("Veces contratado: " + contratistasFrecuencia.get(maxIndex));
                             System.out.println("Monto total pagado: " + contratistasGastos.get(maxIndex));
-                            System.out.println("-----------------------------");
+                            System.out.println("-------------------------------");
                 
                             contratistasIds.remove(maxIndex);
                             contratistasFrecuencia.remove(maxIndex);
@@ -147,6 +160,9 @@ public class Main
                     }
                     break;
                 case 6:
+                    System.out.println("---------------------------------");
+                    System.out.println("* PRESUPUESTO A PARTIR DE FECHA *");        
+                    System.out.println("---------------------------------");
                     try {
                         System.out.print("Ingrese la fecha de inicio (dd/MM/yyyy): ");
                         String fechaInicioStr = sc.nextLine();
