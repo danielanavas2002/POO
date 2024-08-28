@@ -1,37 +1,54 @@
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Proyecto {
     private String idProyecto;
     private String nombre;
-    private String fechaInicio;
-    private String fechaFinEstimada;
+    private Date fechaInicio;
+    private Date fechaFinEstimada;
     private double presupuesto;
-    private double gastoTotal;
+    private ArrayList<Contratista> contratistas;
 
-    public Proyecto(String idProyecto, String nombre, String fechaInicio, String fechaFinEstimada, double presupuesto) {
+    public Proyecto(String idProyecto, String nombre, Date fechaInicio, Date fechaFinEstimada, double presupuesto) 
+    {
         this.idProyecto = idProyecto;
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
         this.fechaFinEstimada = fechaFinEstimada;
         this.presupuesto = presupuesto;
-        this.gastoTotal = 0;
     }
 
-    public void registrarContratista(Contratista contratista) {
-        this.gastoTotal += contratista.getMontoPagado();
+    public void setContratistas(ArrayList<Contratista> contratistas) 
+    { 
+        this.contratistas = contratistas; 
     }
 
-    public double calcularGastoTotal() {
-        return this.gastoTotal;
+    public String getIdProyecto() 
+    { 
+        return idProyecto; 
+    }
+    
+    public String getNombre() 
+    { 
+        return nombre; 
     }
 
-    public void actualizarPresupuesto(double nuevoPresupuesto) {
-        this.presupuesto = nuevoPresupuesto;
+    public Date getFechaInicio() 
+    { 
+        return fechaInicio; 
     }
 
-    // Getters y setters
-    public String getIdProyecto() { return idProyecto; }
-    public String getNombre() { return nombre; }
-    public String getFechaInicio() { return fechaInicio; }
-    public String getFechaFinEstimada() { return fechaFinEstimada; }
-    public double getPresupuesto() { return presupuesto; }
-    public double getGastoTotal() { return gastoTotal; }
+    public Date getFechaFinEstimada() 
+    { 
+        return fechaFinEstimada; 
+    }
+    
+    public double getPresupuesto() 
+    { 
+        return presupuesto; 
+    }
+
+    public ArrayList<Contratista> getContratistas() { 
+        return contratistas; 
+    }
 }
