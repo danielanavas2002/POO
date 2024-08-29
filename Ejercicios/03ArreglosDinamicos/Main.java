@@ -12,7 +12,7 @@
  * Fecha de creación: 28/08/2024
  * Última modificación: 28/08/2024
  */
-
+ 
 import java.text.ParseException; // Importa la clase ParseException para manejar errores de análisis de fecha.
 import java.text.SimpleDateFormat; // Importa la clase SimpleDateFormat para formatear y analizar fechas.
 import java.util.Date; // Importa la clase Date para manejar fechas.
