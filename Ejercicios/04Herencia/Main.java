@@ -392,7 +392,7 @@ public class Main {
                             System.out.println("******************************************");
                             System.out.println("* El espacio que requiere es de: " + tortuga.getAreaMinima() + " m^2.");
                             System.out.println("* Cantidad de comida que necesita (Diario): " + tortuga.calcularComidaDiaria() + " gramos.");
-                            System.out.println("* El costo Mensual de Mantener a la Serpiente es: Q" + tortuga.calcularCostoMantenimiento());
+                            System.out.println("* El costo Mensual de Mantener a la Tortuga es: Q" + tortuga.calcularCostoMantenimiento());
                         
                             boolean banderaIngreso = true;
                             while (banderaIngreso) {
@@ -535,7 +535,7 @@ public class Main {
                             System.out.println("******************************************");
                             System.out.println("* El espacio que requiere es de: " + caiman.getAreaMinima() + " m^2.");
                             System.out.println("* Cantidad de comida que necesita (Diario): " + caiman.calcularComidaDiaria() + " gramos.");
-                            System.out.println("* El costo Mensual de Mantener a la Serpiente es: Q" + caiman.calcularCostoMantenimiento());
+                            System.out.println("* El costo Mensual de Mantener al Cocodrilo/Caimán es: Q" + caiman.calcularCostoMantenimiento());
                         
                             boolean banderaIngreso = true;
                             while (banderaIngreso) {

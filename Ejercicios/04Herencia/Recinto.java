@@ -90,8 +90,8 @@ public class Recinto {
           .append("--------------------------------------------").append("\n")
           .append("DETALLE: ").append("\n").append("ID Reptil").append("\n");
         for (Animal reptil : reptiles) {
-            sb.append(reptil.getId()).append(". Nombre Científico: ").append(reptil.getNombreCientifico())
-              .append(", Costo Mensual: Q").append(reptil.calcularCostoMantenimiento()).append("\n");
+            sb.append(reptil.getId()).append(".          | Nombre Científico: ").append(reptil.getNombreCientifico())
+              .append(" | Costo Mensual: Q").append(reptil.calcularCostoMantenimiento()).append("\n");
         }
         sb.append("--------------------------------------------").append("\n");
         return sb.toString(); 
@@ -122,8 +122,8 @@ public class Recinto {
           .append("ID Reptil").append("\n");
         for (Animal reptil : reptiles) {
             sb.append(reptil.getId()).append(". ").append(reptil.getNombreCientifico())
-              .append(". Hábitat: ").append(reptil.getDescripcionHabitat())
-              .append(". Esperanza de Vida: ").append(reptil.getEsperanzaVida()).append(" años").append("\n");
+              .append(" | Hábitat: ").append(reptil.getDescripcionHabitat())
+              .append(" | Esperanza de Vida: ").append(reptil.getEsperanzaVida()).append(" años").append("\n");
         }
         sb.append("--------------------------------------------").append("\n");
         return sb.toString(); 
