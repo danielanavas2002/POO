@@ -206,7 +206,7 @@ public class Main {
                     case 11: // Salir
                         System.out.println("");
                         System.out.println("=============================================");
-                        System.out.println("===             SALIENDO....             ===");
+                        System.out.println("===              SALIENDO....             ===");
                         System.out.println("=============================================");
                         salir = true;
                         break;
