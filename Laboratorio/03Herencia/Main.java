@@ -246,9 +246,9 @@ public class Main {
      * del objeto {@link Informes} proporcionado.
      *
      * El formato esperado del archivo CSV es el siguiente:
-     * Para matrices: tipo, filas, columnas, estado, tipo, [invertible]
+     * Para matrices: id, filas, columnas, estado, tipo, [invertible]
      * 
-     * Para sistemas de ecuaciones: tipo, numeroEcuaciones, numeroIncognitas, estado, metodoResolucion
+     * Para sistemas de ecuaciones: id, numeroEcuaciones, numeroIncognitas, estado, metodoResolucion
      *
      * @param archivo El nombre del archivo CSV desde el cual se cargarán los datos.
      * @param operaciones El objeto {@link Informes} donde se agregarán las operaciones cargadas.
