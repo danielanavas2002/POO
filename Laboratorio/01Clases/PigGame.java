@@ -17,7 +17,6 @@ import java.util.Random;
 class PigGame {
     private int valor;
     private Random random = new Random();
-    private Player player;
 
     /**
      * Método que simula el lanzamiento de un dado.
